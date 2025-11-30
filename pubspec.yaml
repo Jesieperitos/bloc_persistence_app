@@ -1,0 +1,24 @@
+name: bloc_persistence_app
+description: A Flutter app for task management with Bloc and local persistence.
+publish_to: 'none' # prevent publishing to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.8.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_bloc: ^8.1.3
+  shared_preferences: ^2.2.3
+  uuid: ^4.4.0
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^6.0.0
+
+flutter:
+  uses-material-design: true
