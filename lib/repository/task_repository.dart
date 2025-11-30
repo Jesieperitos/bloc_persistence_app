@@ -8,7 +8,7 @@ class TaskRepository {
     final data = prefs.getString('tasks');
     if (data != null) {
       final list = jsonDecode(data) as List;
-      return list.map((e) => Task.fromJson(e)).toList();
+      return list.map((e) => Task.fromJson(e as Map<String, dynamic>)).toList();
     }
     return [];
   }

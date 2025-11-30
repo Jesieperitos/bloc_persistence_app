@@ -14,11 +14,12 @@ class TaskCubit extends Cubit<List<Task>> {
     emit(tasks);
   }
 
-  void addTask(String title, String description) {
+  void addTask(String title, String description, {Priority priority = Priority.medium}) {
     final newTask = Task(
       id: DateTime.now().millisecondsSinceEpoch,
       title: title,
       description: description,
+      priority: priority,
     );
 
     final updated = [...state, newTask];
@@ -26,10 +27,10 @@ class TaskCubit extends Cubit<List<Task>> {
     repository.saveTasks(updated);
   }
 
-  void updateTask(int id, String title, String description, {bool? isCompleted}) {
+  void updateTask(int id, String title, String description, {bool? isCompleted, Priority? priority}) {
     final updated = state.map((task) {
       if (task.id == id) {
-        return task.copyWith(title: title, description: description, isCompleted: isCompleted);
+        return task.copyWith(title: title, description: description, isCompleted: isCompleted, priority: priority);
       }
       return task;
     }).toList();
