@@ -7,7 +7,6 @@ import 'edit_task_page.dart';
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
-  // helper to show priority badges
   Widget _priorityBadge(Priority p) {
     Color bg;
     String text;
@@ -90,7 +89,6 @@ class HomePage extends StatelessWidget {
                 },
               ),
 
-              // list or empty state
               Expanded(
                 child: BlocBuilder<TaskCubit, List<Task>>(
                   builder: (context, tasks) {
