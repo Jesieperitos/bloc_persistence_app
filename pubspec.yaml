@@ -1,4 +1,4 @@
-name: bloc_persistence_app
+name: Task_Tracker
 description: A Flutter app for task management with Bloc and local persistence.
 publish_to: 'none' # prevent publishing to pub.dev
 
